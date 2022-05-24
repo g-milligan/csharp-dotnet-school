@@ -18,6 +18,8 @@ This demo follows the instructions from the Microsoft Website: <https://docs.mic
 
 The [`vscode` extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) can be installed through the `vscode` IDE:
 
+- C# for Visual Studio Code (powered by OmniSharp).
+
 ![Install the C# Extension in vscode](doc/image/installVscodeExtensionForCS.PNG)
 
 **Making sure .NET is Installed**
@@ -43,7 +45,36 @@ Once installed, check to see if you have the `dotnet --version` command availabl
 
 **Creating the sample project**
 
-...
+Create a new folder inside your repo. This folder name will be the name of the project. For this example, we'll use `HelloWorld` as the project name:
+
+```
+> mkdir HelloWorld
+> cd HelloWorld
+```
+
+Inside the `HelloWorld` run the following command to generate the starting C# .NET project:
+
+```
+> dotnet new console --framework net5.0
+```
+
+The command above would have generated the basic starting files for your starting project:
+
+![Starting C# .NET Project Files](doc/image/generatedFilesForHelloWorldProject.PNG)
+
+**Run the HelloWorld project**
+
+You can run your CSharp project from the `HelloWorld` directory (the directory where the `.csproj` file is located):
+
+```
+> dotnet run
+```
+
+The `HelloWorld` project should output the following when it is run:
+
+```
+Hello World!
+```
 
 ## How to build the .exe file
 

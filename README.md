@@ -84,6 +84,20 @@ The `HelloWorld` project should output the following when it is run:
 Hello World!
 ```
 
+**Setup Build and Debug C# Assets**
+
+If you are using the `C# Extension` (described previously) for the first time, then you will have to allow `vscode` to install some related dependencies for the first time.
+
+To do this, just open a `.cs` file. For example, open this file:
+
+```
+<repoRoot>/HelloWorld/Program.cs
+```
+
+Wait a little bit, and if `vscode` prompts you to, then add the missing assets:
+
+![Add the missing assets](doc/image/addMissingBuildAndDebugAssets.PNG)
+
 ## How do you create the .exe file?
 
 If you have a `.csproj` already, you may need to build it into a .exe file after you made changes to its source code. 

@@ -86,7 +86,7 @@ Hello World!
 
 **Setup Build and Debug C# Assets**
 
-If you are using the `C# Extension` (described previously) for the first time, then you will have to allow `vscode` to install some related dependencies for the first time.
+If you are using the `C# Extension` (described previously) for the first time, then you will have to allow `vscode` to install some related dependencies. Luckily, you only have to do this once as an initial local setup.
 
 To do this, just open a `.cs` file. For example, open this file:
 
@@ -108,12 +108,55 @@ We will use the `HelloWorld` project as an example. The `HelloWorld` project sim
 
 **Create the .exe**
 
-...
+An important thing to note is you may have to specify the correct target "runtime" for your .exe file. This example, used `win10-x64`. But you may have to select a different runtime, depending on which runtime your .exe file needs to run. 
 
-## How to debug using vscode
+Here is one reference for different runtimes (also called "RIDs"): <https://docs.microsoft.com/en-us/dotnet/core/rid-catalog#windows-rids>
 
-(TODO)
+For a more extensive list of runtimes, you can refer to: <https://github.com/dotnet/runtime/blob/main/src/libraries/Microsoft.NETCore.Platforms/src/runtime.json>
+
+You can [check the runtime of an environment](https://docs.microsoft.com/en-us/dotnet/core/install/how-to-detect-installed-versions?pivots=os-windows) with the following terminal command:
+
+```
+> dotnet --list-runtimes
+```
+
+To generate a `EXE` published file from your project, run this command in the same directory where your `.csproj` is located (use the appropriate runtime; this example uses `win10-x64`):
+
+```shell
+> dotnet publish -c Release -r win10-x64
+```
+
+```shell
+# example output
+Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.    
+
+  Determining projects to restore...
+  Restored C:\Users\<MyUser>\csharp-dotnet-school\HelloWorld\HelloWorld.csproj (in 97 ms).
+  HelloWorld -> C:\Users\<MyUser>\csharp-dotnet-school\HelloWorld\bin\Release\net5.0\win10-x64\HelloWorld.dll
+  HelloWorld -> C:\Users\<MyUser>\csharp-dotnet-school\HelloWorld\bin\Release\net5.0\win10-x64\publish\
+```
+
+As you can see from the example output above, a `publish` path is output.
+
+Open this `publish` folder and you will  find an `EXE` file.
+
+For this project, the `EXE` file is `HelloWorld.exe` but the name of this `EXE` will match whatever name your project is using.
+
+![Find the EXE file location](doc/image/findEXEFileLocation.PNG)
+
+You can confirm the `EXE` file works, in this example, by double clicking it and seeing that it is successfully running the console application:
+
+![EXE File Running Successfully](doc/image/confirmEXEWorks.PNG)
+
+**A Note about Portability**
+
+Please note, that your `EXE` file may require all of the generated files that were created around it to remain along-side the `EXE` in the same relative path. 
+
+So, the `EXE` is NOT completely portable on its own. Intead, the entire `publish` folder must be kept all-together, it seems.
 
 ## Unit Tests
 
-(TODO)
+(TBD documentation about unit testing - TODO)
+
+<https://docs.microsoft.com/en-us/dotnet/core/tutorials/testing-library-with-visual-studio-code?pivots=dotnet-5-0>

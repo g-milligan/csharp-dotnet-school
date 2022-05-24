@@ -10,7 +10,15 @@ The purpose of this repo is to teach some fundamentals of C#
 - How to debug C# code using a `vscode` IDE
 - Provide simple examples of how to unit test C# code
 
-## How this Demo was created
+## How to use this repo?
+
+Read this readme file. 
+
+Make sure you understand each section. 
+
+It helps to read each section in sequence since each new section will build upon the knowledge described in previous sections.
+
+## How was this Demo was created?
 
 This demo follows the instructions from the Microsoft Website: <https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code?pivots=dotnet-5-0>
 
@@ -76,9 +84,17 @@ The `HelloWorld` project should output the following when it is run:
 Hello World!
 ```
 
-## How to build the .exe file
+## How do you create the .exe file?
 
-(TODO)
+If you have a `.csproj` already, you may need to build it into a .exe file after you made changes to its source code. 
+
+**Goal**
+
+We will use the `HelloWorld` project as an example. The `HelloWorld` project simply prints the words "Hello World!" in a console terminal. So, if we successfully create a .exe file, then running this .exe file should simply open a console and print the words, "Hello World!".
+
+**Create the .exe**
+
+...
 
 ## How to debug using vscode
 
